@@ -13,7 +13,7 @@ type StaticData = {
 
 interface Window{
     electron : {
-        subscribeStatistic : (callback : (statistics : Statistics) => void ) => void;
+        subscribeStatistic : (callback : (statistics : Statistics) => void ) => UnsubscribeFunction;
         getStaticData : () => Promise<StaticData>
     }
 }
@@ -22,3 +22,6 @@ type EvenetPayloadMapping = {
     statistics : Statistics,
     getStaticData : StaticData
 }
+
+
+type UnsubscribeFunction = () => void;
